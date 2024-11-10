@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-links a {
+    margin: 0 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#committees-list div {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* Basic styles for body and headings */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Container for events */
+#event-list {
+    margin-top: 20px;
+}
+
+/* Event item styles */
+.event-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Button styles */
+.action-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.action-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style for "Add Event" button */
+#add-event-btn {
+    display: none; /* Hidden by default, shown if admin */
+    margin-top: 20px;
+    padding: 12px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Aligning update and delete buttons within event items */
+.event-item .action-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.event-item {
+    margin-bottom: 20px; /* Space between each event item */
+}
+
+.event-item p {
+    margin: 0 0 10px; /* Margin for paragraphs to ensure proper spacing */
+}
+
+.action-btn {
+    margin-top: 10px; /* Space above buttons */
+    padding: 8px 12px; /* Button padding */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.action-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

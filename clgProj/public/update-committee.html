@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Committee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Update Committee</h1>
+    <form id="update-committee-form">
+        <input type="hidden" id="committee-id" value="">
+        <input type="text" id="committee-name" placeholder="Committee Name" required>
+        <textarea id="committee-description" placeholder="Committee Description" required></textarea>
+        <button type="submit">Update Committee</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const committeeId = window.location.pathname.split('/').pop(); // Get committee ID from URL
+            const response = await fetch(`/committees/${committeeId}`);
+            const committee = await response.json();
+            document.getElementById('committee-id').value = committee.committee_id;
+            document.getElementById('committee-name').value = committee.name;
+            document.getElementById('committee-description').value = committee.description;
+
+            document.getElementById('update-committee-form').addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const name = document.getElementById('committee-name').value;
+                const description = document.getElementById('committee-description').value;
+                await updateCommittee(committeeId, name, description);
+            });
+        });
+
+        async function updateCommittee(committeeId, name, description) {
+            try {
+                const response = await fetch(`/update-committee/${committeeId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, description })
+                });
+                const result = await response.json();
+                alert(result.message);
+                window.location.href = '/dashboard'; // Redirect to dashboard after update
+            } catch (error) {
+                alert('Error updating committee: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
